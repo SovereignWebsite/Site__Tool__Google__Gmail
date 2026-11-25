@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>API · Sovereign Website mail</title>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sovereign Website mail, a variation of Gmail">
+<meta property="og:locale" content="en_GB">
+<meta property="og:url" content="https://gmail.google.tool.sovereignweb.site/docs/api/">
+<meta property="og:title" content="API · Sovereign Website mail">
+<meta property="og:description" content="How other sites and agents use Sovereign Website mail: core modules to import, and the data flow through vaults for sending.">
+<meta property="og:image" content="https://gmail.google.tool.sovereignweb.site/assets/share/card-1200x630.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Sovereign Website mail, a variation of Gmail">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="API · Sovereign Website mail">
+<meta name="twitter:description" content="How other sites and agents use Sovereign Website mail: core modules to import, and the data flow through vaults for sending.">
+<meta name="twitter:image" content="https://gmail.google.tool.sovereignweb.site/assets/share/card-1200x630.jpg">
+<link rel="canonical" href="https://gmail.google.tool.sovereignweb.site/docs/api/">
+<meta name="description" content="How other sites and agents use Sovereign Website mail: core modules to import, and the data flow through vaults for sending.">
+<link rel="stylesheet" href="/app/core/doc.css">
+</head>
+<body>
+<header class="bar"><a class="brand" href="/">Sovereign Website mail <span class="muted">API</span></a>
+<nav class="links" aria-label="This site"><a href="/designs/">Designs</a> <a href="/docs/api/">API</a> <a href="/docs/sources/">Sources</a> <a href="/policy/">Policy</a></nav></header>
+<main id="main" class="doc">
+<h1>The API</h1>
+<p>This tool is the one place where email leaves. Other sites, such as the CRM, prepare emails; this tool checks and sends them, with the person's own Google sign-in, in the person's own browser. There is no server: the "API" is a set of modules other sites import, and a data format in vaults that the person owns.</p>
+
+<h2>1. Core modules (import them, pinned to a commit)</h2>
+<p>Plain JavaScript modules under <code>/app/core/</code>, with no page access, so they run in any browser page and in Node tests.</p>
+<ul class="plain">
+<li><code>send.js</code>: the sending rules (recipients, no Bcc, no key material in the text, at most 20 a day) and the raw message Gmail takes.</li>
+<li><code>signoff.mjs</code>: the sign-off format, shared unedited with the CRM: the draft shape, its hash, the person's signature over it, and the check. Its only import is pki.sgit.ai's <code>keys.js</code>.</li>
+<li><code>batch.js</code>: a batch of signed-off drafts: attachment checks, the daily limit, the send order, attachments as MIME parts.</li>
+<li><code>compose.js</code>: the send screen's logic.</li>
+<li><code>demo/mailbox.js</code>: the synthetic twin of a mailbox, and a stand-in for Gmail that records every send as a simulation.</li>
+</ul>
+
+<h2>2. Sending from another site (for example the CRM)</h2>
+<ol>
+<li>The CRM writes a draft into the person's CRM vault: <code>drafts/&lt;id&gt;.json</code> (one recipient, subject, text, optional reply-to and attachments under <code>drafts/&lt;id&gt;/att/</code>).</li>
+<li>The person signs it off in the CRM with their browser key: <code>drafts/&lt;id&gt;.approved.json</code>, a signature over the draft's exact hash and a batch id.</li>
+<li>The person opens this tool's Signed batch design. It opens the vault (its key reaches this page once, as a sealed code), checks every sign-off against the person's pinned key, and sends the batch on one confirmation.</li>
+<li>For each email it writes <code>sent/&lt;id&gt;.json</code> back into the same vault, so the CRM can log it.</li>
+</ol>
+<p>Agents may write drafts. Only a person's sign-off and a person's press send. Signed batches are a proposal until the owner approves the policy line that allows them; today they run in demo only.</p>
+
+<h2>3. Messages between us</h2>
+<p>The first use is email among the team, then the people we already know: an agent prepares the draft, a person presses Send in this tool. No agent reads or sends mail on its own.</p>
+
+<h2>4. The same pattern for Calendar (proposed)</h2>
+<p>A sister tool for Google Calendar would follow the same shape: core modules, a synthetic calendar twin and demo mode first, several designs, the person's own sign-in in their own browser. It needs its own repository and site, and a decision on Google's calendar scopes.</p>
+
+<h2>Status</h2>
+<p>Demo only. Live mode needs the owner to add this site's address to the Google sign-in client. Source code: <a href="https://github.com/SovereignWebsite/Site__Tool__Google__Gmail">Site__Tool__Google__Gmail</a>; where each file came from: <a href="/docs/sources/">sources</a>.</p>
+</main>
+<footer class="doc-foot"><p>A Sovereign Website tool, a variation of Gmail. Not affiliated with or endorsed by Google. Code Apache-2.0; text CC BY 4.0.</p></footer>
+</body>
+</html>

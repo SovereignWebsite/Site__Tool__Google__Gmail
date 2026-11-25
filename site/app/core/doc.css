@@ -1,0 +1,22 @@
+/* Plain pages of Sovereign Website mail (designs index, API, sources). By mail.dev.a@AgentiCCells.dinis, 2026-11-25. Apache-2.0. */
+:root{--bg:#fbfaf7;--fg:#1d1d1b;--muted:#5d5c57;--accent:#2f6b4f;--line:#e4e1d8;--panel:#fff;color-scheme:light dark}
+@media(prefers-color-scheme:dark){:root{--bg:#141513;--fg:#ecebe6;--muted:#a8a69e;--accent:#7fc3a0;--line:#2c2d29;--panel:#1c1d1a}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:var(--accent)}
+.bar{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1.5rem;padding:.8rem 16px;border-bottom:1px solid var(--line)}
+.brand{font-weight:600;color:var(--fg);text-decoration:none}
+.muted{color:var(--muted)}
+.links{margin-left:auto;display:flex;flex-wrap:wrap;gap:1rem}
+.doc{max-width:46rem;margin:0 auto;padding:2rem 16px 3rem}
+h1{font-size:clamp(1.8rem,5vw,2.4rem);line-height:1.15;margin:.5rem 0 1rem}
+h2{font-size:1.2rem;margin:2rem 0 .5rem}
+code{font-size:.9em;overflow-wrap:anywhere}
+.cards{list-style:none;padding:0;display:grid;gap:1rem}
+.cards li{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem}
+.cards h2{margin:0 0 .3rem}
+.cards p{margin:0;color:var(--muted)}
+table{border-collapse:collapse;width:100%;font-size:.92rem;display:block;overflow-x:auto}
+th,td{border-bottom:1px solid var(--line);padding:.4rem .5rem;text-align:left;vertical-align:top}
+.doc-foot{max-width:46rem;margin:0 auto;padding:1rem 16px 2rem;color:var(--muted);font-size:.85rem;border-top:1px solid var(--line)}
+@media(max-width:40rem){.links{margin-left:0;width:100%}}

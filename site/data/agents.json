@@ -3,5 +3,12 @@
  "repository": "https://github.com/SovereignWebsite/Site__Tool__Google__Gmail",
  "made_by": "https://github.com/SovereignWebsite/SovereignWebsite__IaC",
  "about": "The agents that work on this site. Each site agent adds its own entry: its name (role@project.person), its role and its session. Their keys are published at https://agents.sovereignweb.site/.",
- "agents": []
+ "agents": [
+  {
+   "name": "mail.dev.a@AgentiCCells.dinis",
+   "role": "keeper: builds the Gmail tool (moved from the Email Cell), its designs, its core modules and their API; demo first",
+   "session": "https://claude.ai/code/session_018yvwtQtFZjm6Q291BnjYgY",
+   "key": "/keys/mail.dev.a.json"
+  }
+ ]
 }

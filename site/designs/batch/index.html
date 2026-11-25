@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="stylesheet" href="/app/core/tool.css">
+<title>Signed batch · Sovereign Website mail</title>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sovereign Website mail, a variation of Gmail">
+<meta property="og:locale" content="en_GB">
+<meta property="og:url" content="https://gmail.google.tool.sovereignweb.site/designs/batch/">
+<meta property="og:title" content="Signed batch · Sovereign Website mail">
+<meta property="og:description" content="Signed batches, demo only: emails signed by a pinned key, sent on one confirmation per batch, within the daily limit.">
+<meta property="og:image" content="https://gmail.google.tool.sovereignweb.site/assets/share/card-1200x630.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Sovereign Website mail, a variation of Gmail">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Signed batch · Sovereign Website mail">
+<meta name="twitter:description" content="Signed batches, demo only: emails signed by a pinned key, sent on one confirmation per batch, within the daily limit.">
+<meta name="twitter:image" content="https://gmail.google.tool.sovereignweb.site/assets/share/card-1200x630.jpg">
+<link rel="canonical" href="https://gmail.google.tool.sovereignweb.site/designs/batch/">
+<meta name="description" content="Signed batches, demo only: emails signed by a pinned key, sent on one confirmation per batch, within the daily limit.">
+</head>
+<body class="is-demo">
+<header class="bar">
+  <h1 class="brand-h1"><a class="brand" href="/">Sovereign Website mail <span class="muted">Signed batch</span></a></h1>
+  <span class="mode">Demo mode</span>
+  <nav class="links" aria-label="This site"><a href="/designs/">Designs</a> <a href="/designs/send/">Send</a> <a href="/docs/api/">API</a> <a href="/policy/">Policy</a></nav>
+</header>
+<section class="mode-notes" aria-label="Mode">
+<div class="demo-banner" role="note">
+  <strong>Demo mode, a proposal.</strong> Synthetic emails at reserved example domains, signed with a test key made in this page. Nothing leaves this page; each send is a <strong>simulation</strong>. Sending real signed batches waits on Dinis's yes to the policy line C9.
+</div>
+</section>
+
+<main class="wrap batch">
+  <section aria-labelledby="pin-h">
+    <h2 id="pin-h">1. The pinned key</h2>
+    <p class="muted small">Only emails signed by a key pinned here can join a batch. In real use the person carries their signing key into this page by QR code; here a test key stands in.</p>
+    <p id="pinned"></p>
+    <p class="muted small">Batch <span id="batch-id"></span>: each sign-off names it, so a sign-off counts for this batch only.</p>
+    <p class="muted small">At most <span id="max"></span> sends a day; <span id="today">0</span> so far today (in this demo).</p>
+  </section>
+
+  <section class="draft" aria-labelledby="batch-h">
+    <h2 id="batch-h">2. The batch</h2>
+    <ul id="rows" class="rows"></ul>
+    <h2>3. Send the batch</h2>
+    <p class="actions"><button id="send" type="button" class="primary">Send batch</button> <button id="reset" type="button">Start again</button></p>
+    <p id="status" role="status"></p>
+  </section>
+
+  <section class="log" aria-labelledby="log-h">
+    <h2 id="log-h">Sent from this page</h2>
+    <p class="muted small">This tab only; nothing is stored.</p>
+    <ul id="sent" class="sent"></ul>
+  </section>
+</main>
+<footer class="tool-foot"><p class="disclaimer muted small">A Sovereign Website tool, a variation of Gmail. Not affiliated with or endorsed by Google.</p></footer>
+<script type="module" src="./batch-page.js"></script>
+</body>
+</html>

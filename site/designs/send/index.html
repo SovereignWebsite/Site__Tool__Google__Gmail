@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src https://gmail.googleapis.com; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="stylesheet" href="/app/core/tool.css">
+<title>Send · Sovereign Website mail</title>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sovereign Website mail, a variation of Gmail">
+<meta property="og:locale" content="en_GB">
+<meta property="og:url" content="https://gmail.google.tool.sovereignweb.site/designs/send/">
+<meta property="og:title" content="Send · Sovereign Website mail">
+<meta property="og:description" content="The simple send screen: pick a contact, see the draft, edit, press Send. A demo mode on a synthetic mailbox works without signing in.">
+<meta property="og:image" content="https://gmail.google.tool.sovereignweb.site/assets/share/card-1200x630.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Sovereign Website mail, a variation of Gmail">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Send · Sovereign Website mail">
+<meta name="twitter:description" content="The simple send screen: pick a contact, see the draft, edit, press Send. A demo mode on a synthetic mailbox works without signing in.">
+<meta name="twitter:image" content="https://gmail.google.tool.sovereignweb.site/assets/share/card-1200x630.jpg">
+<link rel="canonical" href="https://gmail.google.tool.sovereignweb.site/designs/send/">
+<meta name="description" content="The simple send screen: pick a contact, see the draft, edit, press Send. A demo mode on a synthetic mailbox works without signing in.">
+</head>
+<body>
+<header class="bar">
+  <h1 class="brand-h1"><a class="brand" href="/">Sovereign Website mail <span class="muted">Send</span></a></h1>
+  <span id="mode" class="mode" hidden></span>
+  <nav class="links" aria-label="This site"><a href="/designs/">Designs</a> <a href="/designs/batch/">Signed batch</a> <a href="/docs/api/">API</a> <a href="/policy/">Policy</a></nav>
+</header>
+
+<section class="mode-notes" aria-label="Mode">
+<div id="demo-banner" class="demo-banner" role="note" hidden>
+  <strong>Demo mode.</strong> A synthetic mailbox: every person, address and email here is made up, at reserved example domains. Nothing leaves this page; each send is recorded as a <strong>simulation</strong>.
+</div>
+<div id="real-banner" class="real-banner" role="note" hidden>
+  <strong>Your own Gmail.</strong> Send sends a real email from <span id="real-from"></span> to a real person, after you confirm.
+</div>
+<p id="why" class="why" hidden></p>
+</section>
+
+<main class="wrap">
+  <section class="pick" aria-labelledby="pick-h">
+    <h2 id="pick-h">1. Pick a contact</h2>
+    <div id="contacts-box">
+      <label class="field"><span>Search</span><input id="q" type="search" autocomplete="off" placeholder="Name, address or organisation"></label>
+      <ul id="contacts" class="contacts"></ul>
+    </div>
+    <p id="no-lookup" class="muted" hidden>With your own Gmail, type the address in To. There is no contact lookup yet: where the list comes from is Dinis's decision.</p>
+  </section>
+
+  <section id="draft" class="draft" aria-labelledby="draft-h">
+    <h2 id="draft-h">2. See the draft, edit it</h2>
+    <p id="pick-first" class="pick-first">Pick a contact to see their draft.</p>
+    <p id="from" class="muted"></p>
+    <p id="thread-note" class="muted small" hidden></p>
+    <label class="field"><span>To</span><input id="to" type="email" autocomplete="off" spellcheck="false" placeholder="name@example.com"></label>
+    <label class="field"><span>Subject</span><input id="subject" type="text" autocomplete="off"></label>
+    <label class="field grow"><span>Text</span><textarea id="text" rows="14"></textarea></label>
+    <p class="muted small">No Cc and no Bcc on this screen. At most <span id="max">20</span> sends a day; <span id="today">0</span> so far today<span id="today-src"></span>.</p>
+    <ul id="problems" class="problems" aria-live="polite"></ul>
+    <h2>3. Press Send</h2>
+    <p class="actions"><button id="send" type="button" class="primary">Send</button> <button id="reset" type="button">Back to the draft</button></p>
+    <p id="status" role="status"></p>
+  </section>
+
+  <section class="log" aria-labelledby="log-h">
+    <h2 id="log-h">Sent from this page</h2>
+    <p class="muted small">This list is for this tab only. With your own Gmail, the day's count is also kept, sealed in this browser, for the daily limit.</p>
+    <ul id="sent" class="sent"></ul>
+  </section>
+</main>
+<footer class="tool-foot"><p class="disclaimer muted small">A Sovereign Website tool, a variation of Gmail. Not affiliated with or endorsed by Google.</p></footer>
+<script type="module" src="./send-page.js"></script>
+</body>
+</html>
