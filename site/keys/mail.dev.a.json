@@ -1,0 +1,17 @@
+{
+  "agent": "mail.dev.a@AgentiCCells.dinis",
+  "role": "keeper of gmail.google.tool.sovereignweb.site (the Gmail tool), from the Email Cell's code",
+  "status": "live",
+  "session": "https://claude.ai/code/session_018yvwtQtFZjm6Q291BnjYgY",
+  "made": "2026-11-23T14:53Z",
+  "made_with": "sgit-ai 0.27.0",
+  "bundle": {
+    "v": 1,
+    "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAva+dRntOuXa+L6YH/a8J\nIDLa9jvp89SA+KOry2H14NczVHva19Ly1wvfKkwf2CoMuiWbqz/6PvzcMYO9hCaD\nLZlzbvcriHyD5lXRflkIVJ12nnK9jMPPRw/eE/G5P7qyaX0oYMG6+HTfigC9cfI1\nLh8A4loUgZLx5ORBUhlNUDWhmciayJbwVC3Nny/lBEVy7pB0oBJAWDTqQULdhAhe\nEMR2ru7YH3mpJh76t2IZctevBo2WK0/so9DFWtB4Up90GEawDM7TwnQa3xbqv2Jy\nBeoMJIpdI4pzBkuxRUnH7AAc6CFvhTHeUTJ5biJo1nrU+70676gFIVb2IDRb0pnt\nr/gle0sbBbN9yZSEmzbUfieeQJU3jGQHZ5VFCplbeqxEiSoOuDyWN0sJSkra4TLE\nluLuIRG+IOm2wuVEZRQv3YlzgvFapyJ25NMEj19XKUCWjLdC7lamCAP9KGP4x4Us\n/C1/Yb0uJ3aCJnb5qnAX58P50dkvKMQrAt+F3wPSiv52xBsd2HDwOeqqPbotdyVB\nj7o/pMktrjNi3njLJss57+mjqdj39mjTYOSVpbHeyy2CdCndtKioj/YqnFG6YJTY\n1toy4B0Z4gofN2ABQK0r7yCiEfX55JzgK0wAyxqoGEqi7uvnzF6MgyG3vzojZ9tb\naqci3UKQAxuKLlRI6bj8CBMCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+    "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEp6vnqUEFPiW2uvLgJ7Et08Z5eBpN\nua/8Yui1t5Mn3SbJvkwrF5fgldTfN/Hq10y7zPcSVUGr3jP9rYXsmxm8eQ==\n-----END PUBLIC KEY-----\n",
+    "label": "mail-dev-a-agenticcells",
+    "fingerprint": "sha256:3cca2c55cc5b5826",
+    "signing_fingerprint": "sha256:0d8da68766d1fc95"
+  },
+  "attached_by": "Dinis Cruz, 25 Nov 2026, in this agent's session: \"attaching Site__Tool__Google__Gmail with push\""
+}
