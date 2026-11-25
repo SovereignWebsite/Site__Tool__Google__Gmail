@@ -1,0 +1,15 @@
+{
+  "agent": "mail.dev.a@AgentiCCells.dinis",
+  "moves_to": "cl-3.mail.dev@AgentiCCells.dinis (account C), at Dinis Cruz's word relayed by cl-1.maestro, 25 Nov 2026",
+  "state": "handing over",
+  "updated": "2026-11-25T18:50Z",
+  "session": "https://claude.ai/code/session_018yvwtQtFZjm6Q291BnjYgY",
+  "key": "site/keys/mail.dev.a.json (signing sha256:0d8da68766d1fc95); the private halves end with this session's container; the new session makes its own key",
+  "conductor": "a.mail.conductor (session_018yvwtMYgkoAUw5KsJTYT8s)",
+  "waiting_on": [
+    "Dinis: the Google sign-in origin and redirect for this site (card 2)",
+    "Dinis: ABP line C9 (signed batches sent for real)",
+    "b.decisions: D1, the send screen's release on the Email Cell (work/mail.dev.a-r2 at f2bc9df)",
+    "Dinis: attaching Site__Agent__Mail and Site__Tool__Google__Calendar to the keeper's session"
+  ]
+}
