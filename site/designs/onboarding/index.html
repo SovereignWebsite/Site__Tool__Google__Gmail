@@ -38,8 +38,8 @@
 </section>
 
 <main class="wrap">
-<p class="muted small">Three drafts for the onboarding workflow: a QR code, uploads in, site ready. Dinis changes the wording to his own, fills in the placeholders and sends from his own mail client. The owner's real name, address and files stay in the CRM, never in this repository.</p>
-<section class="draft" aria-labelledby="d1">
+<p class="muted small">One draft for each stage of the onboarding workflow (qr-sent, uploads-in, site-built, editing), each linkable by its stage id. Dinis changes the wording to his own, fills in the placeholders and sends from his own mail client. The owner's real name, address and files stay in the CRM, never in this repository.</p>
+<section class="draft" id="qr-sent" aria-labelledby="d1">
 <h2 id="d1">1. The QR code</h2>
 <p><strong>To:</strong> alex@example.org (fictional owner)<br><strong>Subject:</strong> Welcome: your own space for your site</p>
 <pre>Hello Alex,
@@ -60,7 +60,7 @@ If anything is unclear, just reply to this email.
 Best wishes,
 Dinis</pre>
 </section>
-<section class="draft" aria-labelledby="d2">
+<section class="draft" id="uploads-in" aria-labelledby="d2">
 <h2 id="d2">2. Your uploads are in</h2>
 <p><strong>To:</strong> alex@example.org (fictional owner)<br><strong>Subject:</strong> Your photos and words have arrived</p>
 <pre>Hello Alex,
@@ -74,7 +74,7 @@ If there is a photo you would rather we did not use, tell me and it will stay ou
 Best wishes,
 Dinis</pre>
 </section>
-<section class="draft" aria-labelledby="d3">
+<section class="draft" id="site-built" aria-labelledby="d3">
 <h2 id="d3">3. Your site is ready</h2>
 <p><strong>To:</strong> alex@example.org (fictional owner)<br><strong>Subject:</strong> Your site is ready to look at</p>
 <pre>Hello Alex,
@@ -82,6 +82,18 @@ Dinis</pre>
 Your first version is ready: [address of the site].
 
 Please look it over and tell me what you would change: words, photos, order, anything. You can also change things yourself in your space (the same QR code). When you are happy, say so and we will make it the version everyone sees.
+
+Best wishes,
+Dinis</pre>
+</section>
+<section class="draft" id="editing" aria-labelledby="d4">
+<h2 id="d4">4. Editing</h2>
+<p><strong>To:</strong> alex@example.org (fictional owner)<br><strong>Subject:</strong> Have your changes gone live?</p>
+<pre>Hello Alex,
+
+You made some changes in your space recently. Could you look at [address of the site] and tell me whether they appear as you intended?
+
+If something is missing or looks wrong, reply with what you expected to see and I will sort it out. If it all looks right, you need do nothing.
 
 Best wishes,
 Dinis</pre>
